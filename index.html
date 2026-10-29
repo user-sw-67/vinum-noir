@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>VINUM NOIR — Бутик редких вин и закрытый винный клуб</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23120508'/%3E%3Cpath d='M20 14h24l-2 14c-1 7-6 12-10 12s-9-5-10-12l-2-14z' fill='%238a1c36' stroke='%23d4af37' stroke-width='2.5'/%3E%3Cpath d='M21 22h22c-1 6-5 10-11 10s-10-4-11-10z' fill='%23b52548'/%3E%3Cline x1='32' y1='40' x2='32' y2='52' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='22' y1='52' x2='42' y2='52' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="ambient-wrapper" aria-hidden="true">
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon" aria-hidden="true">🍷</span>
+        <span class="logo__text">VINUM<span>NOIR</span></span>
+      </a>
+
+      <nav class="nav" id="nav-menu" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#collection" class="nav__link">Коллекция</a></li>
+          
+          <li class="nav__dropdown" id="nav-dropdown">
+            <button type="button" class="nav__link nav__dropdown-toggle" aria-expanded="false">
+              <span>Погреб &amp; Сервис</span>
+              <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown-menu">
+              <li>
+                <a href="#ritual-lab" class="dropdown-item">
+                  <span class="dropdown-item__icon">⏳</span>
+                  <div class="dropdown-item__body">
+                    <strong>Лаборатория подачи</strong>
+                    <small>Калькулятор декантации и °C</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#sommelier" class="dropdown-item">
+                  <span class="dropdown-item__icon">🧭</span>
+                  <div class="dropdown-item__body">
+                    <strong>Нейро-сомелье</strong>
+                    <small>Подбор бутылки за 3 шага</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <button type="button" class="dropdown-item" data-open-modal="modal-tasting">
+                  <span class="dropdown-item__icon">🕯️</span>
+                  <div class="dropdown-item__body">
+                    <strong>Закрытая дегустация</strong>
+                    <small>Бронь камерного зала</small>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#privileges" class="nav__link">Привилегии</a></li>
+          <li><a href="#club-cta" class="nav__link">Винный клуб</a></li>
+        </ul>
+
+        <div class="nav__mobile-actions">
+          <button type="button" class="btn btn--ghost btn--full" data-open-modal="modal-tasting">Запись на дегустацию</button>
+          <button type="button" class="btn btn--gold btn--full" data-open-modal="modal-club">Получить карту -25%</button>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <button type="button" class="btn btn--ghost header__tasting-btn" data-open-modal="modal-tasting" data-tooltip="Камерные дегустации до 8 персон в нашем погребе">
+          Дегустация
+        </button>
+        <button type="button" class="btn btn--outline-gold header__cta" data-open-modal="modal-club">
+          Карта клуба -25%
+        </button>
+        <button type="button" class="burger" id="burger-btn" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <div class="badge" data-tooltip="Доступ к лимитированным релизам напрямую из шато Старого Света">
+            Частная винотека &amp; Клуб коллекционеров
+          </div>
+          <h1 class="hero__title">
+            Искусство выдержки в&nbsp;каждом <em>бокале</em>
+          </h1>
+          <p class="hero__subtitle">
+            Авторская селекция старосветских и биодинамических вин из частных шато Франции, Италии и Испании. Станьте резидентом клуба <strong>Vinum Privé</strong> и получите персонального сомелье и закрытые цены.
+          </p>
+          <div class="hero__buttons">
+            <a href="#club-cta" class="btn btn--primary">Вступить в клуб (-25% на сет)</a>
+            <button type="button" class="btn btn--ghost" data-open-modal="modal-tasting">
+              Записаться на дегустацию
+            </button>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat-item" data-tooltip="Каждая бутылка проходит тройную проверку подлинности провенанса">
+              <div class="stat-item__nums">
+                <span class="stat-item__num" data-target="480">0</span><span class="stat-item__suffix">+</span>
+              </div>
+              <span class="stat-item__label">Редких этикеток <i class="info-dot">?</i></span>
+            </div>
+            <div class="stat-item" data-tooltip="Идеальная температура покоя для сохранения третичных ароматов вина">
+              <div class="stat-item__nums">
+                <span class="stat-item__num" data-target="14">0</span><span class="stat-item__suffix">°C</span>
+              </div>
+              <span class="stat-item__label">Климат-контроль <i class="info-dot">?</i></span>
+            </div>
+            <div class="stat-item" data-tooltip="Оценки ведущих мировых критиков Robert Parker и Wine Spectator">
+              <div class="stat-item__nums">
+                <span class="stat-item__num" data-target="98">0</span><span class="stat-item__suffix">%</span>
+              </div>
+              <span class="stat-item__label">Рейтинг RP &amp; WS 90+ <i class="info-dot">?</i></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="wine-showcase">
+            <svg class="wine-showcase__svg" viewBox="0 0 360 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Коллекционное вино Grand Cru">
+              <defs>
+                <linearGradient id="bottleGrad" x1="100" y1="40" x2="220" y2="420" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#3a0ca3" stop-opacity="0.1"/>
+                  <stop offset="25%" stop-color="#590d22"/>
+                  <stop offset="65%" stop-color="#2b0610"/>
+                  <stop offset="100%" stop-color="#110206"/>
+                </linearGradient>
+                <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f3d87d"/>
+                  <stop offset="50%" stop-color="#d4af37"/>
+                  <stop offset="100%" stop-color="#8a6b1c"/>
+                </linearGradient>
+                <linearGradient id="wineLiquid" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#a4133c"/>
+                  <stop offset="100%" stop-color="#4a0518"/>
+                </linearGradient>
+              </defs>
+              <circle cx="180" cy="240" r="130" fill="#800f2f" fill-opacity="0.25" />
+              <path d="M135 55 H165 V115 C165 135 195 150 195 185 V395 C195 406 186 415 175 415 H125 C114 415 105 406 105 395 V185 C105 150 135 135 135 115 Z" fill="url(#bottleGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+              <rect x="133" y="45" width="34" height="38" rx="4" fill="url(#goldGrad)"/>
+              <path d="M116 185 V385" stroke="#ffffff" stroke-opacity="0.22" stroke-width="4" stroke-linecap="round"/>
+              <rect x="113" y="215" width="74" height="110" rx="4" fill="#1a090e" stroke="url(#goldGrad)" stroke-width="1.5"/>
+              <text x="150" y="248" text-anchor="middle" fill="#f3d87d" font-family="Cormorant Garamond, serif" font-size="13" font-weight="700" letter-spacing="2">CHÂTEAU</text>
+              <text x="150" y="268" text-anchor="middle" fill="#ffffff" font-family="Cormorant Garamond, serif" font-size="16" font-style="italic">Noir Réserve</text>
+              <line x1="128" y1="280" x2="172" y2="280" stroke="#d4af37" stroke-width="1"/>
+              <text x="150" y="302" text-anchor="middle" fill="#b8a6ab" font-family="Plus Jakarta Sans, sans-serif" font-size="9" letter-spacing="1.5">GRAND CRU • 2018</text>
+              <path d="M215 245 C215 295 285 295 285 245 L278 195 H222 L215 245 Z" fill="rgba(255,255,255,0.05)" stroke="url(#goldGrad)" stroke-width="1.8"/>
+              <path d="M217 242 C220 282 280 282 283 242 L281 228 H219 L217 242 Z" fill="url(#wineLiquid)"/>
+              <line x1="250" y1="283" x2="250" y2="395" stroke="url(#goldGrad)" stroke-width="2"/>
+              <ellipse cx="250" cy="398" rx="32" ry="7" fill="rgba(212,175,55,0.25)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            </svg>
+
+            <div class="wine-showcase__card" data-tooltip="Нажмите на «Паспорт вина» в каталоге ниже, чтобы изучить винтаж подробно">
+              <span class="wine-showcase__card-tag">Выбор шеф-сомелье</span>
+              <strong>Château Noir Réserve '18</strong>
+              <span>Бордо • Паркер 96/100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collection">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <span class="section__subtitle">Избранный погреб</span>
+            <h2 class="section__title">Винная карта недели</h2>
+          </div>
+          <div class="filter-tabs" role="tablist" aria-label="Фильтр по типу вина">
+            <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Все</button>
+            <button type="button" class="filter-btn" data-filter="red" role="tab" aria-selected="false">Красное</button>
+            <button type="button" class="filter-btn" data-filter="white" role="tab" aria-selected="false">Белое</button>
+            <button type="button" class="filter-btn" data-filter="sparkling" role="tab" aria-selected="false">Игристое</button>
+          </div>
+        </div>
+
+        <div class="catalog-grid" id="catalog-grid">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="ritual-lab">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <span class="section__subtitle">Интерактивный гид сомелье</span>
+            <h2 class="section__title">Лаборатория подачи и декантации</h2>
+          </div>
+          <p class="section__lead">
+            Посмотрите, как возраст винтажа и стиль вина меняют температуру подачи, время насыщения кислородом и форму бокала.
+          </p>
+        </div>
+
+        <div class="ritual-grid reveal">
+          <div class="ritual-controls">
+            <span class="ritual-label">1. Выберите характер вина:</span>
+            <div class="ritual-styles" role="radiogroup" aria-label="Характер вина">
+              <button type="button" class="ritual-style-btn active" data-style="bordeaux">
+                <strong>Великое красное</strong>
+                <span>Бордо / Бароло</span>
+              </button>
+              <button type="button" class="ritual-style-btn" data-style="burgundy">
+                <strong>Тонкое красное</strong>
+                <span>Пино Нуар / Бургундия</span>
+              </button>
+              <button type="button" class="ritual-style-btn" data-style="white_grand">
+                <strong>Выдержанное белое</strong>
+                <span>Шабли Гран Крю / Рислинг</span>
+              </button>
+              <button type="button" class="ritual-style-btn" data-style="champagne">
+                <strong>Миллезимное игристое</strong>
+                <span>Винтажная Шампань</span>
+              </button>
+            </div>
+
+            <div class="ritual-slider-box">
+              <div class="ritual-slider-head">
+                <label for="vintage-age">2. Возраст винтажа (выдержка):</label>
+                <strong class="ritual-age-badge" id="vintage-age-val">8 лет (2018 г.)</strong>
+              </div>
+              <input type="range" id="vintage-age" min="2" max="25" value="8" class="ritual-range">
+              <div class="ritual-range-marks">
+                <span>Молодое</span>
+                <span>Зрелое</span>
+                <span>Раритет</span>
+              </div>
+            </div>
+
+            <div class="ritual-metrics">
+              <div class="ritual-metric" data-tooltip="Оптимальная температура раскрытия ароматических масел без спиртуозности">
+                <span class="ritual-metric__label">Температура <i class="info-dot">?</i></span>
+                <strong class="ritual-metric__val" id="ritual-temp">17 °C</strong>
+              </div>
+              <div class="ritual-metric" data-tooltip="Время контакта с воздухом в декантере для смягчения танинов">
+                <span class="ritual-metric__label">Декантация <i class="info-dot">?</i></span>
+                <strong class="ritual-metric__val" id="ritual-decant">60 мин</strong>
+              </div>
+              <div class="ritual-metric ritual-metric--wide" data-tooltip="Форма чаши направляет поток вина на нужные рецепторы языка">
+                <span class="ritual-metric__label">Рекомендуемый бокал <i class="info-dot">?</i></span>
+                <strong class="ritual-metric__val" id="ritual-glass">Bordeaux Grand Cru</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="ritual-visualizer">
+            <div class="ritual-glass-stage">
+              <svg class="ritual-svg" viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="svg-glass-bowl" d="M55 40 H165 L175 115 C175 155 145 175 110 175 C75 175 45 155 45 115 Z" fill="rgba(255,255,255,0.04)" stroke="#d4af37" stroke-width="2"/>
+                <path id="svg-wine-fill" d="M48 118 C48 152 76 172 110 172 C144 172 172 152 172 118 Z" fill="#8a1c36"/>
+                <line x1="110" y1="175" x2="110" y2="235" stroke="#d4af37" stroke-width="2.5"/>
+                <ellipse cx="110" cy="238" rx="42" ry="7" fill="rgba(212,175,55,0.2)" stroke="#d4af37" stroke-width="1.8"/>
+              </svg>
+              <div class="ritual-status-pill" id="ritual-status">Пик благородной зрелости</div>
+            </div>
+            <p class="ritual-advice" id="ritual-advice">
+              Рекомендуется перелить вино в широкий декантер за 60 минут до подачи, чтобы раскрыть тона кожи, трюфеля и черных ягод.
+            </p>
+            <button type="button" class="btn btn--outline-gold btn--full" data-open-modal="modal-tasting">
+              Продегустировать этот стиль с сомелье
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sommelier">
+      <div class="container">
+        <div class="quiz-box reveal">
+          <div class="quiz-box__info">
+            <span class="section__subtitle">Интерактивный сомелье</span>
+            <h2 class="section__title">Не знаете, с чего начать?</h2>
+            <p class="quiz-box__desc">
+              Ответьте на 3 вопроса о ваших вкусовых предпочтениях, и наш алгоритм подберет идеальную бутылку из закрытого резерва со скидкой <strong>25%</strong> при вступлении в клуб.
+            </p>
+            <div class="quiz-progress">
+              <div class="quiz-progress__bar" id="quiz-progress-bar"></div>
+            </div>
+            <span class="quiz-progress__text" id="quiz-step-indicator">Шаг 1 из 3</span>
+          </div>
+
+          <div class="quiz-box__interactive" id="quiz-container">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="privileges">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="section__subtitle">Закрытое сообщество</span>
+          <h2 class="section__title">Почему ценители выбирают Vinum Privé</h2>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">🗝️</div>
+            <h3 class="feature-card__title">Доступ к закрытым релизам</h3>
+            <p class="feature-card__text">
+              Приоритетная бронь лимитированных винтажей Бургундии, Пьемонта и Шампани до их появления на открытом рынке.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">🥂</div>
+            <h3 class="feature-card__title">Закрытые дегустации</h3>
+            <p class="feature-card__text">
+              Ежемесячные камерные вечера с виноделами и шеф-сомелье. Для владельцев клубной карты — участие комплиментарно.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">🌡️</div>
+            <h3 class="feature-card__title">Хранение в винном сейфе</h3>
+            <p class="feature-card__text">
+              Ваши бутылки хранятся в нашем погребе при строгой влажности 75% и температуре 14°C с доставкой за 60 минут к вашему ужину.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="club-cta">
+      <div class="container">
+        <div class="cta-wrapper reveal">
+          <div class="cta-wrapper__left">
+            <span class="badge badge--gold">Главное предложение сезона</span>
+            <h2 class="cta-wrapper__title">Станьте резидентом клуба <em>Vinum Privé</em></h2>
+            <p class="cta-wrapper__text">
+              Оформите карту резидента сегодня: мы закрепим за вами <strong>привилегию -25%</strong> на первый дегустационный сет или выбранную бутылку, а также подарим пару бокалов из тонкого выдувного хрусталя.
+            </p>
+
+            <div class="tier-selector" role="radiogroup" aria-label="Выбор привилегии">
+              <label class="tier-card active" data-tier="Амбассадор (Дегустационный сет 3 бут.)">
+                <input type="radio" name="club_tier" value="Амбассадор" checked>
+                <div class="tier-card__header">
+                  <span class="tier-card__name">Карта «Sommelier»</span>
+                  <span class="tier-card__price" data-tooltip="Без ежегодного взноса при заказе приветственного сета">Бесплатно с сетом</span>
+                </div>
+                <p class="tier-card__sub">3 авторские бутылки + скидка 25% + хрустальные бокалы в подарок</p>
+              </label>
+
+              <label class="tier-card" data-tier="Grand Cru (Индивидуальный резерв)">
+                <input type="radio" name="club_tier" value="Grand Cru">
+                <div class="tier-card__header">
+                  <span class="tier-card__name">Карта «Grand Cru»</span>
+                  <span class="tier-card__price" data-tooltip="Включает персональную ячейку на 24 бутылки в нашем хранилище">VIP-статус</span>
+                </div>
+                <p class="tier-card__sub">Личный сомелье 24/7, ячейка в хранилище и доступ к аукционным лотам</p>
+              </label>
+            </div>
+          </div>
+
+          <div class="cta-wrapper__right">
+            <form class="cta-form" id="main-cta-form" novalidate>
+              <h3 class="cta-form__title">Забронировать статус и привилегию</h3>
+              
+              <div class="selected-wine-banner" id="selected-wine-banner" hidden>
+                <span>Выбранное вино в резерве:</span>
+                <strong id="selected-wine-name"></strong>
+              </div>
+
+              <div class="form-group">
+                <label for="user-name">Ваше имя</label>
+                <input type="text" id="user-name" name="name" placeholder="Александр" required autocomplete="name">
+                <span class="form-error">Пожалуйста, укажите ваше имя</span>
+              </div>
+
+              <div class="form-group">
+                <label for="user-phone">Телефон для связи с сомелье</label>
+                <input type="tel" id="user-phone" name="phone" placeholder="+7 (999) 000-00-00" required autocomplete="tel">
+                <span class="form-error">Введите корректный номер телефона</span>
+              </div>
+
+              <div class="form-group">
+                <label id="pref-label">Предпочтения по вину</label>
+                <div class="custom-select" data-custom-select>
+                  <input type="hidden" name="preference" value="Красное сухое выдержанное">
+                  <button type="button" class="custom-select__trigger" aria-labelledby="pref-label" aria-expanded="false">
+                    <span class="custom-select__value">🍷 Красное сухое выдержанное</span>
+                    <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </button>
+                  <ul class="custom-select__options" role="listbox">
+                    <li class="custom-select__option selected" role="option" data-value="Красное сухое выдержанное">
+                      <span>🍷 Красное сухое выдержанное</span>
+                      <small>Бордо, Тоскана, Риоха</small>
+                    </li>
+                    <li class="custom-select__option" role="option" data-value="Белое минеральное и свежее">
+                      <span>🥂 Белое минеральное и свежее</span>
+                      <small>Шабли, Сансер, Рислинг</small>
+                    </li>
+                    <li class="custom-select__option" role="option" data-value="Шампанское и креманы">
+                      <span>🍾 Шампанское и креманы</span>
+                      <small>Миллезимы и Блан де Блан</small>
+                    </li>
+                    <li class="custom-select__option" role="option" data-value="Доверюсь выбору шеф-сомелье">
+                      <span>✨ Доверюсь выбору шеф-сомелье</span>
+                      <small>Индивидуальный дегустационный сет</small>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <label class="checkbox-label">
+                <input type="checkbox" id="age-confirm" required checked>
+                <span>Мне исполнилось 18 лет, и я соглашаюсь с правилами клуба</span>
+              </label>
+
+              <button type="submit" class="btn btn--primary btn--full">
+                Получить карту клуба и скидку 25%
+              </button>
+
+              <div class="form-success" id="form-success" hidden>
+                <div class="form-success__icon">✨</div>
+                <h4>Заявка в клуб принята!</h4>
+                <p>Персональный сомелье свяжется с вами в течение 10 минут для подтверждения привилегии и доставки.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <span class="logo__icon">🍷</span>
+          <span class="logo__text">VINUM<span>NOIR</span></span>
+        </a>
+        <p class="footer__copy">
+          Москва, Патриаршие пруды, Малый Козихинский пер., 12.<br>
+          Ежедневно с 12:00 до 00:00.
+        </p>
+      </div>
+      <div class="footer__legal">
+        <p class="age-warning">18+ ЧРЕЗМЕРНОЕ УПОТРЕБЛЕНИЕ АЛКОГОЛЯ ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ.</p>
+        <p>© 2026 VINUM NOIR Privé. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal-club" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-club-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog">
+      <button type="button" class="modal__close" data-close-modal aria-label="Закрыть окно">&times;</button>
+      <span class="badge badge--gold">Закрытый доступ</span>
+      <h3 class="modal__title" id="modal-club-title">Привилегия резидента -25%</h3>
+      <p class="modal__desc">Оставьте контакт — мы выпустим именную карту в Apple/Google Wallet и пришлем закрытый каталог редких вин.</p>
+      <form id="modal-club-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <label for="modal-name">Ваше имя</label>
+          <input type="text" id="modal-name" placeholder="Введите имя" required>
+        </div>
+        <div class="form-group">
+          <label for="modal-phone">Номер телефона</label>
+          <input type="tel" id="modal-phone" placeholder="+7 (999) 000-00-00" required>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Активировать карту клуба</button>
+        <div class="form-success" id="modal-club-success" hidden>
+          <h4>Карта закреплена за вашим номером!</h4>
+          <p>Мы уже отправляем вам приветственный сет и ссылку на карту.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-wine-detail" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="detail-wine-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog modal__dialog--wide">
+      <button type="button" class="modal__close" data-close-modal aria-label="Закрыть окно">&times;</button>
+      <div class="wine-passport">
+        <div class="wine-passport__head">
+          <span class="badge badge--gold" id="detail-wine-region">Бордо, Франция</span>
+          <span class="wine-card__rating" id="detail-wine-rating">RP 97</span>
+        </div>
+        <h3 class="modal__title" id="detail-wine-title">Château Margaux Grand Vin 2018</h3>
+        <p class="modal__desc" id="detail-wine-notes"></p>
+
+        <div class="wine-passport__specs">
+          <div class="passport-spec">
+            <span>Подача</span>
+            <strong id="detail-wine-temp">16–18 °C</strong>
+          </div>
+          <div class="passport-spec">
+            <span>Декантация</span>
+            <strong id="detail-wine-decant">90 минут</strong>
+          </div>
+          <div class="passport-spec">
+            <span>Потенциал хранения</span>
+            <strong id="detail-wine-aging">до 2042 г.</strong>
+          </div>
+        </div>
+
+        <div class="wine-passport__section">
+          <h4>Колесо ароматов:</h4>
+          <div class="aroma-tags" id="detail-wine-aromas"></div>
+        </div>
+
+        <div class="wine-passport__section">
+          <h4>Идеальная гастропара от шефа:</h4>
+          <p id="detail-wine-pairing" class="wine-passport__pairing"></p>
+        </div>
+
+        <div class="wine-passport__footer">
+          <div>
+            <span class="wine-card__old-price" id="detail-wine-oldprice">24 000 ₽</span>
+            <div class="wine-card__price" id="detail-wine-price">18 000 ₽</div>
+          </div>
+          <button type="button" class="btn btn--primary" id="detail-reserve-btn">
+            Забронировать со скидкой 25%
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-tasting" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tasting-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog">
+      <button type="button" class="modal__close" data-close-modal aria-label="Закрыть окно">&times;</button>
+      <span class="badge">Камерный каминный зал</span>
+      <h3 class="modal__title" id="tasting-title">Запись на закрытую дегустацию</h3>
+      <p class="modal__desc">Вечер в сопровождении шеф-сомелье, 5 редких винтажей и фермерские сыры.</p>
+
+      <form id="modal-tasting-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <label>Выберите тематику вечера</label>
+          <div class="custom-select" data-custom-select>
+            <input type="hidden" name="tasting_theme" value="Великие вина Бордо и Бургундии">
+            <button type="button" class="custom-select__trigger" aria-expanded="false">
+              <span class="custom-select__value">🍷 Великие вина Бордо и Бургундии</span>
+              <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <ul class="custom-select__options" role="listbox">
+              <li class="custom-select__option selected" role="option" data-value="Великие вина Бордо и Бургундии">
+                <span>🍷 Великие вина Бордо и Бургундии</span>
+                <small>Пятница, 19:30 • 5 винтажей Grand Cru</small>
+              </li>
+              <li class="custom-select__option" role="option" data-value="Слепая дегустация: Старый vs Новый Свет">
+                <span>🎭 Слепая дегустация: Старый vs Новый Свет</span>
+                <small>Суббота, 19:00 • Интерактив с сомелье</small>
+              </li>
+              <li class="custom-select__option" role="option" data-value="Винтажная Шампань и устричный сет">
+                <span>🍾 Винтажная Шампань и устричный сет</span>
+                <small>Воскресенье, 18:00 • Премиальные кюве</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Количество персон</label>
+          <div class="guest-stepper">
+            <button type="button" class="stepper-btn" id="guest-minus" aria-label="Уменьшить">−</button>
+            <span class="stepper-val" id="guest-count">2 персоны</span>
+            <button type="button" class="stepper-btn" id="guest-plus" aria-label="Увеличить">+</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tasting-phone">Ваш телефон для подтверждения брони</label>
+          <input type="tel" id="tasting-phone" placeholder="+7 (999) 000-00-00" required>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full">Забронировать стол в погребе</button>
+        <div class="form-success" id="modal-tasting-success" hidden>
+          <h4>Стол предварительно забронирован!</h4>
+          <p>Сомелье позвонит вам для согласования гастрономического сета.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="smart-tooltip" class="smart-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
